@@ -13,6 +13,7 @@ on manual dispatch.
 - opencode (`OPENCODE_VERSION` build arg, base image `ghcr.io/anomalyco/opencode`)
 - git, github-cli (`gh`), openssh-client, curl, jq, make, build-base
 - Go, Node.js, npm, TypeScript (`tsc`), `tsx`
+- Python 3, pip and [uv](https://docs.astral.sh/uv/) (`uv`, `uvx`; uses the system Python)
 
 ## Environment
 
@@ -24,7 +25,7 @@ on manual dispatch.
 | `OPENCODE_SERVER_PASSWORD` | Optional basic-auth password for the server. |
 
 Go and npm caches live under `/workspace` (`GOPATH`, `GOCACHE`,
-`npm_config_cache`); mount a persistent volume there.
+`npm_config_cache`, `UV_CACHE_DIR`); mount a persistent volume there.
 
 ## Running
 
